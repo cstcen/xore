@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * @author xin.cen
+ * @author Chester
  **/
-@SuppressWarnings("unchecked")
 public class BatchWriteResult<T> extends BaseResult {
     private static final long serialVersionUID = 4541069104176451507L;
 
@@ -23,12 +22,16 @@ public class BatchWriteResult<T> extends BaseResult {
      * 由接口实现方确定返回ID List，还是DO List
      */
     public <E> Collection<E> getSuccessList() {
-        return (Collection<E>) successList;
+        @SuppressWarnings("unchecked")
+        final Collection<E> successes = (Collection<E>) this.successList;
+        return successes;
     }
 
     public <S extends BatchWriteResult<?>> S withSuccessList(Collection<?> successList) {
         this.successList = successList;
-        return (S) this;
+        @SuppressWarnings("unchecked")
+        final S s = (S) this;
+        return s;
     }
 
     public Collection<T> getFailList() {
@@ -40,6 +43,8 @@ public class BatchWriteResult<T> extends BaseResult {
      */
     public <S extends BatchWriteResult<?>> S withFailList(Collection<T> failList) {
         this.failList = failList;
-        return (S)this;
+        @SuppressWarnings("unchecked")
+        final S s = (S) this;
+        return s;
     }
 }

@@ -1,7 +1,7 @@
 package com.cstcen.core.constant;
 
 /**
- * @author xin.cen
+ * @author Chester
  **/
 public enum OrderEnum {
     /**

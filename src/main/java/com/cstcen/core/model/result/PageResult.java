@@ -1,7 +1,7 @@
 package com.cstcen.core.model.result;
 
 /**
- * @author xin.cen
+ * @author Chester
  **/
 public class PageResult<T> extends BaseResult {
 
@@ -17,9 +17,10 @@ public class PageResult<T> extends BaseResult {
         this.page = page;
     }
 
-    @SuppressWarnings("unchecked")
-    public <S extends PageResult> S withPage(DataPage<T> page) {
+    public <S extends PageResult<?>> S withPage(DataPage<T> page) {
         this.page = page;
-        return (S) this;
+        @SuppressWarnings("unchecked")
+        final S s = (S) this;
+        return s;
     }
 }

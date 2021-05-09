@@ -1,9 +1,8 @@
 package com.cstcen.core.model.result;
 
 /**
- * @author xin.cen
+ * @author Chester
  **/
-@SuppressWarnings("unchecked")
 public class ModelResult<T> extends BaseResult {
     private static final long serialVersionUID = -6105271631587287073L;
 
@@ -27,13 +26,17 @@ public class ModelResult<T> extends BaseResult {
 
     public <S extends ModelResult<T>> S withModel(T model) {
         this.model = model;
-        return (S) this;
+        @SuppressWarnings("unchecked")
+        final S s = (S) this;
+        return s;
     }
 
-    public <S extends ModelResult<T>> S withModelFromDB(T model) {
+    public <S extends ModelResult<T>> S withModelFromDb(T model) {
         this.model = model;
         this.readFromCache = false;
-        return (S) this;
+        @SuppressWarnings("unchecked")
+        final S s = (S) this;
+        return s;
     }
 
     public boolean isReadFromCache() {

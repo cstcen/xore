@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * @author xin.cen
+ * @author Chester
  **/
 public class BaseResult implements Serializable {
 
@@ -18,10 +18,11 @@ public class BaseResult implements Serializable {
         return errorList.isEmpty();
     }
 
-    @SuppressWarnings("unchecked")
     public <T extends BaseResult> T withError(String code, String msg) {
         errorList.put(code, msg);
-        return (T) this;
+        @SuppressWarnings("unchecked")
+        final T t = (T) this;
+        return t;
     }
 
     public Optional<String> getCode() {

@@ -8,7 +8,7 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
- * @author xin.cen
+ * @author Chester
  **/
 public class NetUtil {
     public static final String MY_IP = getSiteLocalIp();

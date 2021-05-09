@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @author xin.cen
+ * @author Chester
  **/
 public class DataPage<T> implements Serializable {
 
@@ -21,7 +21,7 @@ public class DataPage<T> implements Serializable {
     private boolean needData = true;
     private boolean needTotalCount = true;
 
-    private List<T> dataList = null;
+    private List<T> data = null;
     private long totalCount = -1;
 
     public DataPage() {
@@ -132,11 +132,11 @@ public class DataPage<T> implements Serializable {
     }
 
     public List<T> getDataList() {
-        return dataList;
+        return data;
     }
 
     public void setDataList(List<T> dataList) {
-        this.dataList = dataList;
+        this.data = dataList;
     }
 
     public long getTotalCount() {
